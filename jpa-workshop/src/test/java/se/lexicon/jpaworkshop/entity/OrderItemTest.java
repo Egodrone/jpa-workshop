@@ -3,6 +3,7 @@ package se.lexicon.jpaworkshop.entity;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
@@ -22,6 +23,7 @@ public class OrderItemTest {
 
 
     @Test
+    @DisplayName("Test of setters and getters")
     public void test_setters_and_getters() {
         testObject = new OrderItem(1, 9, product, new ProductOrder());
         Assertions.assertEquals(1, testObject.getId());
@@ -31,6 +33,7 @@ public class OrderItemTest {
 
 
     @Test
+    @DisplayName("Test of total order price")
     public void test_order_price() {
         testObject = new OrderItem(1, 9, product, new ProductOrder());
         Assertions.assertEquals(1800, testObject.totalOrderPrice(product, 9));

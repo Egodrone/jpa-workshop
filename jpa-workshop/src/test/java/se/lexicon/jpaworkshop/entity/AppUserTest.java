@@ -3,6 +3,7 @@ package se.lexicon.jpaworkshop.entity;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
@@ -20,6 +21,7 @@ public class AppUserTest {
 
 
     @Test
+    @DisplayName("Test of setters and getters")
     public void test_setter_and_getters() {
         testObject.setId(1);
         testObject.setFirstName("Test");
