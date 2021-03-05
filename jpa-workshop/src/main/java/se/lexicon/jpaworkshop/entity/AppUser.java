@@ -1,16 +1,26 @@
 package se.lexicon.jpaworkshop.entity;
 
 
+import javax.persistence.*;
 import java.util.Objects;
 
+
+@Entity
 public class AppUser {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
+    @Column(nullable = false, length = 50)
     private String firstName;
+    @Column(nullable = false, length = 50)
     private String lastName;
+    @Column(nullable = false, length = 75, unique = true)
     private String email;
+
 
     public AppUser() {
     }
+
 
     public AppUser(int id, String firstName, String lastName, String email) {
         this.id = id;
@@ -18,6 +28,7 @@ public class AppUser {
         this.lastName = lastName;
         this.email = email;
     }
+
 
     public int getId() {
         return id;

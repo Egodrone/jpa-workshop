@@ -1,22 +1,31 @@
 package se.lexicon.jpaworkshop.entity;
 
 
+import javax.persistence.*;
 import java.util.Objects;
 
 
+@Entity
 public class Product {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
+    @Column(nullable = false, length = 50)
     private String name;
+    @Column(nullable = false, length = 50)
     private int price;
+
 
     public Product() {
     }
+
 
     public Product(int id, String name, int price) {
         this.id = id;
         this.name = name;
         this.price = price;
     }
+
 
     public int getId() {
         return id;
